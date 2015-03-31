@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:utopic
 MAINTAINER Adam Chapman <adam.p.chapman@gmail.com>
 
 # base packages
