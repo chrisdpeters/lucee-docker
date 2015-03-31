@@ -28,7 +28,7 @@ COPY lucee/web.xml /opt/lucee/tomcat/conf/web.xml
 COPY lucee/server.xml /opt/lucee/tomcat/conf/server.xml
 
 # expose http port
-EXPOSE 80 8080
+EXPOSE 80
 
 # start script
 ADD scripts/start.sh /start.sh
