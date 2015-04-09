@@ -4,17 +4,17 @@ MAINTAINER Adam Chapman <adam.p.chapman@gmail.com>
 # base packages
 RUN apt-get update -y && apt-get install -y wget nginx unzip
 
-# install railo
+# install lucee
 RUN LUCEE_VERSION="4.5.1.000" \
 	&& LUCEE_INSTALLER="lucee-$LUCEE_VERSION-pl0-linux-x64-installer.run" \
 	&& wget -O /tmp/$LUCEE_INSTALLER http://railo.viviotech.net/downloader.cfm/id/133/file/$LUCEE_INSTALLER \
 	&& chmod -R 744 /tmp/$LUCEE_INSTALLER \
-	&& /tmp/$LUCEE_INSTALLER --mode unattended --installconn false --installiis false --railopass change_me_to_something_secure \
+	&& /tmp/$LUCEE_INSTALLER --mode unattended --installconn false --installiis false --railopass *****change_me_to_something_secure***** \
 	&& rm -rf /tmp/$LUCEE_INSTALLER
 
 # make web root
 RUN mkdir /var/www
-# copy entire contents of App folder into webroot
+# copy entire contents of app directory into webroot
 COPY app/ /var/www/
 
 # nginx config
