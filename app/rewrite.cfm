@@ -1,1 +1,1 @@
-<cfinclude template="index.cfm">
+<cfinclude template="wheels/index.cfm">

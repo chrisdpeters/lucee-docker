@@ -1,0 +1,33 @@
+web:
+  build: .
+  command: ./start.sh
+  ports:
+    - "3000:80"
+  volumes:
+    - ./app/:/var/www/
+  environment:
+    WHEELS_ENV: design
+    WHEELS_RELOAD_PW: 
+
+    DB_TYPE: 
+    DB_HOST: 
+    DB_PORT: 
+    DB_DATABASE: 
+    DB_USERNAME: 
+    DB_PASSWORD: 
+
+    SMTP_SERVER: 
+    SMTP_PORT: 
+    SMTP_USESSL: 
+    SMTP_USETLS: 
+    SMTP_SIGN: 
+    SMTP_USERNAME: 
+    SMTP_PASSWORD: 
+    SMTP_BCC: 
+    SMTP_CHARSET: 
+    SMTP_TIMEOUT: 
+    SMTP_FAILTO: 
+    SMTP_KEYSTORE: 
+    SMTP_KEYSTOREPASSWORD: 
+    SMTP_KEYALIAS: 
+    SMTP_KEYPASSWORD: 

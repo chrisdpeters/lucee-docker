@@ -1,21 +1,22 @@
-FROM ubuntu:utopic
-MAINTAINER Adam Chapman <adam.p.chapman@gmail.com>
+# https://registry.hub.docker.com/u/phusion/baseimage/
+FROM phusion/baseimage:0.9.16
+MAINTAINER Chris Peters <chris.peters@liquifusion.com>
 
 # base packages
 RUN apt-get update -y && apt-get install -y wget nginx unzip
 
 # install lucee
 RUN LUCEE_VERSION="4.5.1.000" \
-	&& LUCEE_INSTALLER="lucee-$LUCEE_VERSION-pl0-linux-x64-installer.run" \
-	&& wget -O /tmp/$LUCEE_INSTALLER http://railo.viviotech.net/downloader.cfm/id/133/file/$LUCEE_INSTALLER \
-	&& chmod -R 744 /tmp/$LUCEE_INSTALLER \
-	&& /tmp/$LUCEE_INSTALLER --mode unattended --installconn false --installiis false --railopass *****change_me_to_something_secure***** \
-	&& rm -rf /tmp/$LUCEE_INSTALLER
+  && LUCEE_INSTALLER="lucee-$LUCEE_VERSION-pl0-linux-x64-installer.run" \
+  && wget -O /tmp/$LUCEE_INSTALLER http://railo.viviotech.net/downloader.cfm/id/133/file/$LUCEE_INSTALLER \
+  && chmod -R 744 /tmp/$LUCEE_INSTALLER \
+  && /tmp/$LUCEE_INSTALLER --mode unattended --installconn false --installiis false --railopass 0tEb1-2oLf3-4Inch5-6uC7-8muD9 \
+  && rm -rf /tmp/$LUCEE_INSTALLER
 
 # make web root
 RUN mkdir /var/www
-# copy entire contents of app directory into webroot
-COPY app/ /var/www/
+# copy entire contents of app directories into webroot
+ADD app/ /var/www/
 
 # nginx config
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
@@ -27,12 +28,6 @@ COPY nginx/default /etc/nginx/sites-enabled/default
 COPY lucee/web.xml /opt/lucee/tomcat/conf/web.xml
 COPY lucee/server.xml /opt/lucee/tomcat/conf/server.xml
 
-# expose http port
-EXPOSE 80 8080
-
 # start script
 ADD scripts/start.sh /start.sh
 RUN chmod +x /start.sh
-
-# start services
-CMD "/start.sh"

@@ -1,2 +1,1 @@
-<cfdump var="#Now()#">
-<cfdump var="#ExpandPath('index.cfm')#">
+<cfinclude template="wheels/index.cfm">
