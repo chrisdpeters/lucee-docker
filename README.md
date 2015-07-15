@@ -32,7 +32,6 @@ You must have the following installed on your development machine:
         settings not in use.)
     3.  Add any other environment-specific settings that you'd like for your development environment.
 5.  From the project root, run `docker-compose build`. Docker will install and configure Ubuntu, Nginx, and Lucee.
-    files.
 
 ## Running the application
 
