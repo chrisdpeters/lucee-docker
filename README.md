@@ -1,4 +1,4 @@
-# cfwheels-lucee-docker
+# lucee-docker
 
 A [Docker][1] container for [CFWheels][2] applications running on [Lucee][3], [Ubuntu][4], and [Nginx][5].
 
