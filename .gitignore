@@ -1,0 +1,6 @@
+._.gitignore
+.DS_Store
+._.DS_Store
+/app/plugins/*/*
+/app/WEB-INF
+/docker-compose.yml
