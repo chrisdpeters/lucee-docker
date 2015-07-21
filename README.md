@@ -54,6 +54,6 @@ To stop the application, press `Ctrl + C`.
 [4]: http://www.ubuntu.com/
 [5]: http://nginx.org/
 [6]: https://docs.docker.com/compose/
-[7]: https://github.com/liquifusion/cfwheels-lucee-docker/archive/master.zip
+[7]: https://github.com/liquifusion/lucee-docker/archive/master.zip
 [8]: https://bitbucket.org/lucee/lucee/wiki/Cookbook_Datasource_Define_Datasource#markdown-header-create-a-datasource-in-the-applicationcfc
 [9]: http://phusion.github.io/baseimage-docker/
